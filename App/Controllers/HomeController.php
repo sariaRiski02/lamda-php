@@ -36,6 +36,12 @@ class HomeController extends Controller
     public function testRequest()
     {
         $request = new Request();
-        echo $request->input('test');
+        var_dump($request->input('test'));
+    }
+
+    public function testRequestFile()
+    {
+        $request = new Request();
+        var_dump($request->file('file'));
     }
 }

@@ -14,6 +14,7 @@ Get::route('/param/{test}', [HomeController::class, 'param']);
 Get::route('/{test}/{test}/{test}', [HomeController::class, 'doubleParam']);
 Get::route('/test', [HomeController::class, 'testIndexPost']);
 Post::route('/test', [HomeController::class, 'testRequest']);
+Post::route('/file', [HomeController::class, 'testRequestFile']);
 
 
 

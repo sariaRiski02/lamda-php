@@ -14,6 +14,11 @@
         <button type="submit">Test Submit</button>
     </form>
 
+    <form action="/file" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" id="">
+        <button type="submit">upload test</button>
+    </form>
+
 </body>
 
 </html>

@@ -9,11 +9,16 @@ class Request
 
     public function __construct()
     {
-        $this->data = $_REQUEST;
+        $this->data = $_POST;
     }
 
-    public function input(string $key, $default = null)
+    public function input($name)
     {
-        return $this->data[$key] ?? $default;
+        return $this->data[$name];
+    }
+
+    public function file($fileName)
+    {
+        return $_FILES[$fileName];
     }
 }
