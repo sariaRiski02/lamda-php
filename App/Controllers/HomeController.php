@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\Controller;
-
+use App\Lamda\Request;
 
 class HomeController extends Controller
 {
@@ -27,5 +27,15 @@ class HomeController extends Controller
     public function doubleParam($a, $b, $c)
     {
         return "$a $b $c";
+    }
+
+    public function testIndexPost()
+    {
+        return $this->view('post');
+    }
+    public function testRequest()
+    {
+        $request = new Request();
+        echo $request->input('test');
     }
 }

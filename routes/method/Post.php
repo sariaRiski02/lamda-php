@@ -2,12 +2,14 @@
 
 namespace Routes\Method;
 
-class Get
+class Post
 {
+
     private static array $routes = [];
     public static function route(string $url, array $action)
     {
-        self::$routes['GET'][$url] = $action;
+
+        self::$routes['POST'][$url] = $action;
     }
 
     public static function dispatch()
@@ -25,6 +27,7 @@ class Get
                 array_shift($matches); // Remove the full match
                 [$controller, $method] = $handler;
                 $controllerInstance = new $controller();
+
                 echo $controllerInstance->$method(...$matches);
                 exit;
             }
