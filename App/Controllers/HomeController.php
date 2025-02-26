@@ -9,30 +9,30 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $data = [1, 2, 3, 4, 5];
-
+        $data = [1, 2, 3, 4];
         return $this->view('index', compact('data'));
     }
 
-    public function test($test)
+    public function GetParam($test)
     {
-        return $test;
+        $data = "Data from param is: $test";
+        return $this->view('getParam', compact('data'));
     }
 
-    public function param($test)
+    public function getDoubleParam($param1, $param2)
     {
-        return $test;
+        $data = "param 1: $param1 <br>
+                param 2: $param2 ";
+        return $this->view('getParam', compact('data'));
     }
 
-    public function doubleParam($a, $b, $c)
+    public function testPost()
     {
-        return "$a $b $c";
+        $request = new Request();
+        var_dump($request);
     }
 
-    public function testIndexPost()
-    {
-        return $this->view('post');
-    }
+
     public function testRequest()
     {
         $request = new Request();
@@ -42,6 +42,5 @@ class HomeController extends Controller
     public function testRequestFile()
     {
         $request = new Request();
-        var_dump($request->file('file'));
     }
 }
