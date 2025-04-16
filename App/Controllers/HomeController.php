@@ -43,4 +43,9 @@ class HomeController extends Controller
     {
         $request = new Request();
     }
+
+    public function test()
+    {
+        return $this->view('notAuth');
+    }
 }

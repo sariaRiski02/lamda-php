@@ -18,5 +18,5 @@ Post::route('/post', [HomeController::class, 'testPost']);
 Post::route('/post-param/{test}', [HomeController::class, 'testPostParam']);
 Post::route('/post-double-param/{test}/{test}', [HomeController::class, 'postDoubleParam']);
 
-
+Get::route('/test', [HomeController::class, 'test']);
 // Route::get() should be like this
